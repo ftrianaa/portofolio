@@ -16,6 +16,7 @@ import Header from '../../public/components/Header';
 const renderer = createDOMRenderer();
 import { Inter, Karla } from 'next/font/google'
 import './globals.css'
+import Footer from '../../public/components/Footer';
 
 const karla = Karla({ subsets: ['latin'] })
 
@@ -51,6 +52,7 @@ export function Providers({ children }) {
           <div className={karla.className}>
             <Header />
             {children}
+            <Footer />
           </div>
         </FluentProvider>
       </SSRProvider>
