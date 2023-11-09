@@ -1,10 +1,10 @@
 import React from 'react'
-import { Caveat, Dancing_Script, Playpen_Sans } from 'next/font/google'
-import { LargeTitle, Text, Title2, makeStyles } from '@fluentui/react-components'
+import { Caveat } from 'next/font/google'
+import { LargeTitle, makeStyles } from '@fluentui/react-components'
 import Link from 'next/link'
 
 
-const ovo = Caveat({ subsets: ['latin'] })
+const caveat = Caveat({ subsets: ['latin'] })
 
 const useStyles = makeStyles({
      container: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
           // paddingRight: '80px',
           // paddingLeft: '80px',
           // paddingTop: '50px',
-          backgroundColor: 'black',
+          // backgroundColor: 'black',
 
      },
      header: {
@@ -30,12 +30,12 @@ const useStyles = makeStyles({
 const Header = () => {
      const styles = useStyles()
      return (
-          <div className={styles.container} style={{ padding: '2em 5em 0em 5em' }}>
-               <LargeTitle style={ovo.style}>Portofolio</LargeTitle>
+          <div className={styles.container} style={{ padding: '2em 5em 2em 5em' }}>
+               <LargeTitle style={caveat.style}>Portofolio</LargeTitle>
                <div className={styles.header}>
-                    <Link href="/experience">Experiences</Link>
-                    <Link href="/experience">Educations</Link>
-                    <Link href='/portofolio'>Portofolio</Link>
+                    <Link href="/experiences">Experiences</Link>
+                    <Link href="/educations">Educations</Link>
+                    <Link href='/contacts'>Contacts</Link>
                     <Link href="/">Home</Link>
                </div>
           </div>

@@ -2,6 +2,8 @@
 
 // Import global styles
 import './globals.css'
+
+
 // Import custom providers
 import { Providers } from './providers';
 

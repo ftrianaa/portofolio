@@ -1,9 +1,10 @@
 import { Body1, Subtitle1, Text, Title1, Title3, makeStyles } from '@fluentui/react-components'
 import React from 'react'
 import { Heart24Regular } from '@fluentui/react-icons';
-import { Caveat } from 'next/font/google';
+import { Caveat, Karla } from 'next/font/google';
 
 const caveat = Caveat({ subsets: ['latin'] })
+const karla = Karla({ subsets: ['latin'] })
 
 
 const useStyles = makeStyles({
@@ -26,8 +27,8 @@ const Footer = () => {
 
   return (
     <div style={{ padding: '2em 5em 2em 5em' }}>
-      <div className={styles.footer}>
-        <Text>Made With</Text> <Heart24Regular color='red' /> <Text>by</Text> <Subtitle1 style={caveat.style}>Fitriana</Subtitle1>
+      <div className={styles.footer} style={karla.style}>
+        <Text>Made With Love</Text> <Heart24Regular color='red' /> <Text>by</Text> <Subtitle1 style={caveat.style}>Fitriana</Subtitle1>
       </div>
     </div>
   )
