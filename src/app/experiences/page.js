@@ -20,7 +20,8 @@ const Experiences = () => {
               </CardPreview>
               <CardHeader
                 header={<Title1 style={{ ...caveat.style, color: 'white' }}>{item.title}</Title1>}
-                description={<Body1 align='justify' >{item.desc}</Body1>}
+                description={<Body1 align='justify' >{item.desc}</Body1>
+                }
               />
               <CardFooter>
 
