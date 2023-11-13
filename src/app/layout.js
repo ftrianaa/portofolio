@@ -15,7 +15,7 @@ import { Providers } from './providers';
  */
 export const metadata = {
   title: 'Portofolio',
-  description: 'My first website created with Next.js and Fluent UI',
+  description: `Hello, I'm Fitriana, a programmer skilled in both front-end and back-end development.This is my personal information along with some portfolios that I've created using Next JS. If you're interested in collaborating with me, you can check the contact page to reach me for further communication.Thank you ^^`,
 }
 
 /**
@@ -29,6 +29,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel='icon' href='/code.png' />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

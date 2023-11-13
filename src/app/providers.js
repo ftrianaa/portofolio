@@ -11,6 +11,8 @@ import {
   teamsHighContrastTheme,
   webLightTheme,
   webDarkTheme,
+  teamsDarkTheme,
+  teamsLightTheme
 } from '@fluentui/react-components';
 import Header from '../../public/components/Header';
 
@@ -19,6 +21,8 @@ const renderer = createDOMRenderer();
 import { Karla } from 'next/font/google'
 import './globals.css'
 import Footer from '../../public/components/Footer';
+
+
 // import styles from './page.module.css'
 
 const karla = Karla({ subsets: ['latin'] })
@@ -51,7 +55,7 @@ export function Providers({ children }) {
   return (
     <RendererProvider renderer={renderer || createDOMRenderer()}>
       <SSRProvider>
-        <FluentProvider theme={teamsHighContrastTheme}>
+        <FluentProvider theme={teamsDarkTheme}>
           <div className={karla.className}>
             <Header />
             <div style={{ minHeight: '80vh' }}>

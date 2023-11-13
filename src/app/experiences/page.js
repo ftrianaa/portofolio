@@ -1,5 +1,5 @@
 'use client'
-import { Body1, Card, CardFooter, CardHeader, CardPreview, Image, Title1 } from '@fluentui/react-components'
+import { Body1, Card, CardFooter, CardHeader, CardPreview, Image, Tag, Title1 } from '@fluentui/react-components'
 import { Caveat } from 'next/font/google'
 import React, { Fragment } from 'react'
 import { experiences } from '../../../public/data/experience'
@@ -24,7 +24,11 @@ const Experiences = () => {
                 }
               />
               <CardFooter>
-
+                {item.tags.map((label, id) => {
+                  return (
+                    <Tag value={label} key={id}>{label}</Tag>
+                  )
+                })}
               </CardFooter>
             </Card>
           )
