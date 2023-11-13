@@ -51,10 +51,10 @@ export function Providers({ children }) {
   return (
     <RendererProvider renderer={renderer || createDOMRenderer()}>
       <SSRProvider>
-        <FluentProvider theme={webDarkTheme}>
+        <FluentProvider theme={teamsHighContrastTheme}>
           <div className={karla.className}>
             <Header />
-            <div style={{ minHeight: '100vh' }}>
+            <div style={{ minHeight: '80vh' }}>
               {children}
             </div>
             <Footer />

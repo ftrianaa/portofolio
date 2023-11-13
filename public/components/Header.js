@@ -30,13 +30,15 @@ const useStyles = makeStyles({
 const Header = () => {
      const styles = useStyles()
      return (
-          <div className={styles.container} style={{ padding: '2em 5em 2em 5em' }}>
-               <LargeTitle style={caveat.style}>Portofolio</LargeTitle>
-               <div className={styles.header}>
-                    <Link href="/experiences">Experiences</Link>
-                    <Link href="/educations">Educations</Link>
-                    <Link href='/contacts'>Contacts</Link>
-                    <Link href="/">Home</Link>
+          <div style={{ position: 'sticky', top: '0' }}>
+               <div className={styles.container} style={{ padding: '2em 5em 2em 5em' }}>
+                    <LargeTitle style={caveat.style}>Portofolio</LargeTitle>
+                    <div className={styles.header}>
+                         <Link href="/experiences">Experiences</Link>
+                         <Link href="/educations">Educations</Link>
+                         <Link href='/contacts'>Contacts</Link>
+                         <Link href="/">Home</Link>
+                    </div>
                </div>
           </div>
      )

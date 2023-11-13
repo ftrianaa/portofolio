@@ -7,12 +7,18 @@ export const imageBuild = [{
 }, {
      title: 'Framer Motion',
      logo: 'https://seeklogo.com/images/F/framer-logo-578EDBC6CE-seeklogo.com.png'
-}, {
-     title: 'Express JS',
-     logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png',
+},
+{
+     title: 'Firebase',
+     logo: 'https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-standard.png',
      style: '2em'
-}, {
-     title: 'PostgreSQL',
-     logo: 'https://miro.medium.com/v2/resize:fit:830/1*oJNT5RMvXl8GvsRatm5fXA@2x.png'
 }
+     //  {
+     //      title: 'Express JS',
+     //      logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png',
+     //      style: '2em'
+     // }, {
+     //      title: 'PostgreSQL',
+     //      logo: 'https://miro.medium.com/v2/resize:fit:830/1*oJNT5RMvXl8GvsRatm5fXA@2x.png'
+     // }
 ]
