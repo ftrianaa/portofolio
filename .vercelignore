@@ -1,4 +1,9 @@
-# .vercelignore
-node_modules
+# vercelignore
+/node_modules
 build
 dist
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
