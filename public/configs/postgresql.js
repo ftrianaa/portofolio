@@ -3,5 +3,5 @@
 // }
 
 export const config = {
-     apiUrl: 'https://portofolio-backends.vercel.app/'
+     apiUrl: 'https://portofolio-backends.vercel.app/api/'
 }
