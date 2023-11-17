@@ -14,7 +14,7 @@ const Experiences = () => {
   const [experiences, setExperiences] = useState([])
   const [loadExperiences, setLoadExperiences] = useState(false)
 
-  const fetchExperienceList = async () => {
+  const fetchExperience = async () => {
     setLoadExperiences(true)
     try {
       const responseExperience = await experiencesService.getAllExperiences()
@@ -36,9 +36,9 @@ const Experiences = () => {
     }
   }
   useEffect(() => {
-    fetchExperienceList()
+    fetchExperience()
     return () => {
-      setExperienceList([])
+      setExperiences([])
     }
   }, [])
 
