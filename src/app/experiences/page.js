@@ -1,5 +1,5 @@
 'use client'
-import { Body1, Card, CardFooter, CardHeader, CardPreview, Image, Skeleton, SkeletonItem, Tag, Title1, Toast, ToastBody, ToastTitle, useId, useToastController } from '@fluentui/react-components'
+import { Body1, Card, CardFooter, CardHeader, CardPreview, Image, Skeleton, SkeletonItem, Tag, Title1, Toast, ToastBody, ToastTitle, Toaster, useId, useToastController } from '@fluentui/react-components'
 import { Caveat } from 'next/font/google'
 import React, { Fragment, useEffect, useState } from 'react'
 // import { experiences } from '../../../public/data/experience'
@@ -8,8 +8,8 @@ import experiencesService from '../../../public/services/experiencesServices'
 const caveat = Caveat({ subsets: ['latin'] })
 
 const Experiences = () => {
-  const toast = useId('toaster')
-  const { dispatchToast } = useToastController(toast);
+  const toasterId = useId('toaster')
+  const { dispatchToast } = useToastController(toasterId);
 
   const [experiences, setExperiences] = useState([])
   const [loadExperiences, setLoadExperiences] = useState(false)
@@ -18,13 +18,14 @@ const Experiences = () => {
     setLoadExperiences(true)
     try {
       const responseExperience = await experiencesService.getAllExperiences()
+
       if (responseExperience.success) {
         setExperiences(responseExperience.data)
       } else {
         dispatchToast(
           <Toast>
-            <ToastTitle>Failed to get experiences</ToastTitle>
-            <ToastBody subtitle="Subtitle">{responseExperience.data}</ToastBody>
+            <ToastTitle>Error</ToastTitle>
+            <ToastBody>Failed to get data</ToastBody>
           </Toast>,
           { intent: "error" }
         );
@@ -44,6 +45,7 @@ const Experiences = () => {
 
   return (
     <Fragment>
+      <Toaster toasterId={toasterId} />
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '2em', padding: '2em 5em 2em 5em' }}>
 
         {loadExperiences && experiences.length === 0 ?
