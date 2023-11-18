@@ -11,15 +11,20 @@
   "dependencies": {
     "@fluentui/react-components": "^9.37.4",
     "@fluentui/react-icons": "^2.0.222",
+    "@react-three/fiber": "^8.15.11",
+    "@types/three": "^0.158.2",
     "axios": "^1.6.2",
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.4",
     "next": "14.0.1",
     "pg": "^8.11.3",
+    "popmotion": "^11.0.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
+    "react-three": "^0.9.7",
     "react-typed": "^1.2.0",
-    "scheduler": "^0.23.0"
+    "scheduler": "^0.23.0",
+    "three": "^0.158.0"
   }
 }

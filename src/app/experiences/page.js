@@ -49,7 +49,7 @@ const Experiences = () => {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '2em', padding: '2em 5em 2em 5em' }}>
 
         {loadExperiences && experiences.length === 0 ?
-          [1, 2, 3, 4].map((x) => (
+          [1, 2, 3, 4, 5, 6, 7, 8].map((x) => (
             <Skeleton >
               <SkeletonItem style={{ height: '10em', marginBottom: '1em' }} />
               <SkeletonItem style={{ marginBottom: '1em' }} />
