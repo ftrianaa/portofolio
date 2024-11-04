@@ -1,9 +1,11 @@
 'use client'; // This is necessary to indicate this component will use client-side rendering
 
 import React, { Fragment, useState, useEffect, useRef } from 'react';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
 import { Button, makeStyles, Text } from '@fluentui/react-components';
+import dynamic from 'next/dynamic';
+const Document = dynamic(() => import('react-pdf').then(mod => mod.Document), { ssr: false });
+const Page = dynamic(() => import('react-pdf').then(mod => mod.Page), { ssr: false });
+import { pdfjs } from 'react-pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
 
