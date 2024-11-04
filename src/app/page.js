@@ -23,20 +23,16 @@ const useStyles = makeStyles({
     paddingBottom: '2em',
   },
   container: {
+    ...shorthands.gap("1em"),
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-end",
-    justifyContent: 'center',
-    padding: '0 5em',
-    '@media (max-width: 768px)': {
-      padding: '0 2em', // Adjust padding for smaller screens
+    alignItems: "end",
+    justifyContent: "center",
+    "@media (max-width: 768px)": {
+      padding: "0 2em", // Adjust padding for smaller screens
     },
   },
   gap: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: '1em',
     '> :not(:last-child)': {
       marginRight: '5em',
     },
@@ -60,7 +56,7 @@ const useStyles = makeStyles({
     },
   },
   canvasWrapper: {
-    width: '100%',
+    width: '60%',
     zIndex: 100,
     '@media (max-width: 768px)': {
       height: '50vh', // Adjust height for mobile
