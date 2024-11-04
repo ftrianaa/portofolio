@@ -1,31 +1,24 @@
-'use client'
+'use client';
 
 // Import necessary dependencies from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 // Import necessary dependencies from '@fluentui/react-components'
 import {
   createDOMRenderer,
   RendererProvider,
   FluentProvider,
   SSRProvider,
-  teamsHighContrastTheme,
-  webLightTheme,
-  webDarkTheme,
-  teamsDarkTheme,
-  teamsLightTheme
+  teamsHighContrastTheme
 } from '@fluentui/react-components';
 import Header from '../../public/components/Header';
+import { Karla } from 'next/font/google';
+import './globals.css';
+import Footer from '../../public/components/Footer';
 
 // Create a DOM renderer for Fluent UI.
 const renderer = createDOMRenderer();
-import { Karla } from 'next/font/google'
-import './globals.css'
-import Footer from '../../public/components/Footer';
 
-
-// import styles from './page.module.css'
-
-const karla = Karla({ subsets: ['latin'] })
+const karla = Karla({ subsets: ['latin'] });
 
 /**
  * Providers component.
@@ -38,33 +31,55 @@ const karla = Karla({ subsets: ['latin'] })
  * @returns {React.Element} The Providers component with child components.
  */
 export function Providers({ children }) {
-  // Declare a state variable named 'hasMounted' and a function named 'setHasMounted' to update it.
   const [hasMounted, setHasMounted] = useState(false);
+  const [padding, setPadding] = useState('2em 5em');
 
-  // Use the 'useEffect' hook to set 'hasMounted' to true once the component has mounted.
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setPadding('0.5em'); // For small screens
+      } else if (window.innerWidth < 960) {
+        setPadding('1em'); // For medium screens
+      } else {
+        setPadding('2em 5em'); // For large screens
+      }
+    };
+
+    // Set initial padding
+    handleResize();
+
+    // Attach event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
-  // If the component hasn't mounted yet, return nothing.
   if (!hasMounted) {
     return null;
   }
 
-  // If the component has mounted, return a set of providers.
   return (
     <RendererProvider renderer={renderer || createDOMRenderer()}>
       <SSRProvider>
         <FluentProvider theme={teamsHighContrastTheme}>
           <div className={karla.className}>
-            <Header />
-            <div style={{ minHeight: '80vh' }}>
-              {children}
+            <div style={{ padding }}>
+              <Header />
+              <div style={{ minHeight: '80vh' }}>
+                {children}
+              </div>
             </div>
             <Footer />
           </div>
         </FluentProvider>
       </SSRProvider>
-    </RendererProvider >
+    </RendererProvider>
   );
 }

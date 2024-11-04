@@ -8,7 +8,7 @@ import { FaLinkedinIn, FaGithub, FaRegEnvelope } from "react-icons/fa";
 import ReactTyped from 'react-typed';
 const caveat = Caveat({ subsets: ['latin'] })
 const karla = Karla({ subsets: ['latin'] })
-
+ 
 const useStyles = makeStyles({
      buildImage: {
           backgroundColor: 'white',
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 const Contacts = () => {
      const styles = useStyles()
      return (
-          <div style={{ marginBottom: '5em', paddingInline: '5em', }}>
+          <div>
                <div className={styles.buildImage} style={{ borderTopRightRadius: '5em', borderTopLeftRadius: '5em', alignItems: 'center', justifyContent: 'center', display: 'flex', padding: '2em' }}>
                     <Title1 align='center' style={caveat.style}>You Can Catch Me</Title1>
                </div>
